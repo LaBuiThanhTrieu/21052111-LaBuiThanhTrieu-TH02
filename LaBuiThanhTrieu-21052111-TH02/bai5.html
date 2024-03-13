@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+        }
+        .login-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 50px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: #555;
+            color: white;
+            border-radius: 10px;
+            height: 30px;
+        }
+        .login-button {
+            width: 50px;
+            height: 40px; 
+            background-color: red; 
+            color: white; 
+            border: none;
+            cursor: pointer;
+        }
+        .button {      
+            background-color: red; 
+            font-size: 16px; 
+    
+            margin-left: 380px; 
+            position: absolute;
+            cursor: pointer;
+            border-radius: 10px;
+            
+        }
+        .form{
+            position: relative;
+            margin-top: 50px;
+        }
+        .icon{
+            height: 30px;
+            background-color: azure;
+        }
+        .lock{
+            width: 100%; 
+            height: auto; 
+            border: none; 
+        }
+        .iconDangNhap{
+            position: absolute;
+            cursor: pointer;
+            margin-left: -40px;
+            margin-top: 7px;
+        }
+        .iconMatKhau{
+            position: absolute;
+            cursor: pointer;
+            margin-left: -40px;
+            margin-top: 7px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-header">
+        <img class="icon" src="in-door.jpg">
+        Login
+    </div>
+    <button class="button">
+        
+            <img class="lock" onclick="confirmAction()" src="lock.jpg" alt="Icon">
+       
+    </button>
+    <form class="form" action="/action_page.php" method="post">
+        <div>
+            <input type="text" id="username" name="username" placeholder="Tên đăng nhập" value="saigon">
+            <img class="iconDangNhap" src="iconDangNhap.jpg">
+        </div>
+        <div>
+            <input type="password" id="pwd" name="pwd" placeholder="Mật khẩu">
+            <img class="iconMatKhau" src="iconMatKhau.jpg">
+        </div>
+    </form> 
+
+    
+    
+</div>
+
+<script>
+    function confirmAction() {
+        var confirmation = confirm("Bạn có muốn hiển thị mật khẩu?");
+        if (confirmation) {
+            document.getElementById("pwd").type = "text";
+        } else {
+            document.getElementById("pwd").type = "password";
+        }
+    }
+</script>
+</body>
+</html>
